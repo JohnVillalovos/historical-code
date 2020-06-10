@@ -1,0 +1,84 @@
+NodeID 1.04 is Copyright (c) 1992, 1993 by John L. Villalovos of
+Seriously Sound.  This program and previous versions of this program are
+freeware.  Future versions may become shareware.  This program may be freely
+distributed with the restriction that this program may not be uploaded or
+be on Compuserve Information Services (commonly known as Compuserve).
+
+If you want you can send me email, money or a postcard.  I would appreciate it
+but it is not required or assumed that you will.
+
+NodeID          Get network address and place into environment variables.
+
+Description:    Sets four environment variables based on your machines
+                configuration.  The four environment variables are as
+                follows.
+
+                VIDEO   This variable is set depending on the display adapter
+                        installed in your computer.  It will be set to one
+                        of the following.  Excuse any errors in translating the
+                        acronyms.
+                        MDA     Monochrome Display Adapter
+                        CGA     Color Graphics Adapter
+                        EGA     Enhanced Graphics Adapter
+                        MCGA    Multi-Color Graphics Adapter
+                        VGA     Video Graphics Adapter
+
+                NETNUM  This variable is set to an 8 byte value for the
+                        network number.  The network number is the number
+                        assigned to the section of network your station is
+                        connected.  You may have a number of computers on
+                        the same network number.  In a single file server
+                        installation with only one NIC (Network Interface
+                        Card) then all the stations will have the same
+                        network number.
+
+                NODE1 & NODE2 compromise the 12 byte node address of the
+                workstation.  The reason they are split up is so that it is
+                easy to use the variables to create file names or
+                subdirectories.
+
+                NODE1   This variable is set to the first 4 bytes of the node
+                        address of the workstation.  In a Arcnet installation
+                        this will always be 0000 while in Ethernet and other
+                        topologies this will vary by the card.  Usually cards
+                        from the same manufacturer will have the same value
+                        for all their cards.
+
+                NODE2   This variable is set to the last 8 bytes of the node
+                        address of the workstation.  This is the variable that
+                        will probably be used the most to uniquely identify a
+                        workstation.
+
+Command Line Commands:  /Q      Quiet output.  This will not display any
+                                messages unless an error occurs during the
+                                program.
+
+                        /N      Will not display a warning message if NETX is
+                                not loaded.  Use this option with /Q if you
+                                want no output and you are only loading IPX.
+
+Requirements:   This program requires at a minimum that IPX be loaded.
+                DOS 2.0+.
+
+History of changes.
+1.04
+        3-Nov-93
+        Converted to EXE instead of COM, no other changes.  Removed beta label.
+        Has been out for a while and no bug reports.
+
+1.03 beta
+        4-Aug-93
+        Removed windowing.  Added /Q & /N options.  Actually put a little
+        documentation into the file.
+
+1.02 beta
+        Added a window look to display.
+
+1.01 beta
+        Added VIDEO environment variable.
+
+1.00 beta
+        Initial version of NodeID.  Written entirely in assembly language using
+        the excellent Spontaneous Assembly library.  This version sets the
+        NETNUM, NODE1, & NODE2 environment variables.  Also tests for DOS 2.0
+        or above.
