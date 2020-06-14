@@ -14,8 +14,8 @@
 
 # Program to enable the NUM LOCK state on the keyboard.
 
-    BITS 16                                 ; This is a 16 bit executable for DOS
-    ORG 0x100                               ; .COM files start at 0x100
+    BITS 16                         ; This is a 16 bit executable for DOS
+    ORG 0x100                       ; .COM files start at 0x100
 
     SECTION .text
 
