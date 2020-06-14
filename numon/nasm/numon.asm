@@ -19,14 +19,14 @@
 
     SECTION .text
 
-    mov             ax,BIOS_DATA_AREA       ; Set DS to the
-    mov             ds,ax                   ; BIOS Data area
-    mov             ax,[KB_FLAG_OFFSET]     ; Get the keyboard state flag
-    or              ax,NUM_SHIFT            ; Set the Num Lock state to on
-    mov             [KB_FLAG_OFFSET],ax     ; Save the state
+    mov     ax,BIOS_DATA_AREA       ; Set DS to the
+    mov     ds,ax                   ; BIOS Data area
+    mov     ax,[KB_FLAG_OFFSET]     ; Get the keyboard state flag
+    or      ax,NUM_SHIFT            ; Set the Num Lock state to on
+    mov     [KB_FLAG_OFFSET],ax     ; Save the state
 
-    mov ax,EXIT_SUCCESS                     ; Exit with success
-    int 0x21
+    mov     ax,EXIT_SUCCESS         ; Exit with success
+    int     0x21
 
 
 # Program constants
